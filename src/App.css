@@ -1,0 +1,10 @@
+.app {
+  margin: 6px;
+}
+
+@media screen and (min-width: 1024px) {
+  .app {
+    width: 1024px;
+    margin: 6px auto;
+  }
+}
