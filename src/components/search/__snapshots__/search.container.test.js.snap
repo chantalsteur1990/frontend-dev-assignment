@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search container should render (snapshot) 1`] = `
+<Search
+  ariaLabelClear="annuleren"
+  ariaLabelInput="zoeken"
+  ariaLabelSubmit="zoeken"
+  handleChange={[Function]}
+  handleClear={[Function]}
+  handleSearch={[Function]}
+  handleSubmit={[Function]}
+  handleSuggestions={[Function]}
+  name="search"
+  placeholder="Zoeken"
+  showButtonClear={false}
+  value=""
+/>
+`;

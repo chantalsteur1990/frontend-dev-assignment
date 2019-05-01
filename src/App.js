@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import Search from './components/search/search';
+import SearchContainer from './components/search/search.container';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-          <Search name="search" placeholder="Zoeken" handleChange={() => {}} ariaLabel="zoeken" />
+          <SearchContainer
+            name="search"
+            placeholder="Zoeken"
+            handleSearch={() => {}}
+            handleSuggestions={() => {}}
+            ariaLabelInput="zoeken"
+            ariaLabelClear="annuleren"
+            ariaLabelSubmit="zoeken"/>
       </div>
     );
   }

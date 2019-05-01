@@ -6,10 +6,14 @@ import Search from './search';
 const props = {
   name: 'search',
   placeholder: 'Zoeken',
-  ariaLabel: 'zoeken',
-  handleChange: action('input changed')
+  ariaLabelInput: 'zoeken',
+  ariaLabelClear: 'annuleren',
+  ariaLabelSubmit: 'zoeken',
+  handleChange: action('input changed'),
+  handleClear: action('input cleared'),
+  handleSubmit: action('input submitted'),
+  showButtonClear: true
 };
 
 storiesOf('Search', module)
   .add('basic', () => <Search {...props} />);
-

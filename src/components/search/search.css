@@ -2,11 +2,16 @@
   position: relative;
 }
 
-.input-search__icon {
+.input-search__actions {
   position: absolute;
+  top: 0;
   right: 0;
+}
+
+.input-search__actions__icon {
   width: 40px;
   padding: 11px;
+  cursor: pointer;
 }
 
 .input-search__input {
@@ -16,9 +21,14 @@
   line-height: 40px;
   border: 1px solid lightgray;
   padding: 0 6px;
+  transition: border 0.2s linear;
 }
 
 .input-search__input::-webkit-search-cancel-button {
-  position: relative;
-  right: 30px;
+  -webkit-appearance: none;
+}
+
+.input-search__input:focus {
+  outline: none;
+  border: 1px solid black;
 }
