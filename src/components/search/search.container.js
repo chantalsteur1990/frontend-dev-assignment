@@ -32,7 +32,7 @@ export class SearchContainer extends Component {
     } else {
       showButtonClear = false;
     }
-    console.log(e.target.value);
+
     this.setState({
       ...this.state,
       value: e.target.value,

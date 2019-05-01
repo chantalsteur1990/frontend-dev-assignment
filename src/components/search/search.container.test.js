@@ -22,14 +22,47 @@ describe('Search container', () => {
     expect(shallowToJson(component)).toMatchSnapshot();
   });
   
-  // it ('should have mutated the state', () => {
-  //     const searchContainer = new SearchContainer(mockProps);
-  //     const mockEvent = {
-  //       target: {
-  //         value: 't'
-  //       }
-  //     };
-  //     searchContainer.handleChange(mockEvent);
-  //     expect(searchContainer.state).toEqual({});
-  // })
+  it ('should have mutated the state', () => {
+    const component = shallow(<SearchContainer {...mockProps} />);
+
+    expect(component.instance().state).toEqual({
+      showButtonClear: false,
+      value: ''
+    });
+
+    let mockEvent = { target: { value: 't' }};
+    component.instance().handleChange(mockEvent);
+    expect(component.instance().state).toEqual({
+      showButtonClear: true,
+      value: 't'
+    });
+
+    mockEvent.target.value = '';
+    component.instance().handleChange(mockEvent);
+    expect(component.instance().state).toEqual({
+      showButtonClear: false,
+      value: ''
+    });
+  });
+
+  it ('should clear the input', () => {
+    const component = shallow(<SearchContainer {...mockProps} />);
+    component.instance().state = {
+      value: 'trui',
+      showButtonClear: true
+    };
+
+    component.instance().handleClear();
+    expect(component.instance().state).toEqual({
+      showButtonClear: false,
+      value: ''
+    });
+  });
+
+  it ('should call the submit callback with the current value', () => {
+    const component = shallow(<SearchContainer {...mockProps} />);
+    component.instance().state.value = 'trui';
+    component.instance().handleSubmit();
+    expect(mockProps.handleSearch).toHaveBeenCalledWith('trui');
+  })
 });

@@ -15,36 +15,36 @@ const Search = (props) => {
     ariaLabelSubmit,
     showButtonClear,
     value,
-     } = props;
+  } = props;
 
-    return (
-      <div className="input-search">
-        <div className="input-search__actions">
-          { showButtonClear &&
-            <button onClick={handleClear} aria-label={ariaLabelClear}>
-              <img
-                alt="icon-clear"
-                className="input-search__actions__icon"
-                src={iconClear}></img>
-            </button>
-          }
-          <button onClick={handleSubmit} aria-label={ariaLabelSubmit}>
+  return (
+    <div className="input-search">
+      <div className="input-search__actions">
+        { showButtonClear &&
+          <button onClick={handleClear} aria-label={ariaLabelClear}>
             <img
-              alt="icon-search"
+              alt="icon-clear"
               className="input-search__actions__icon"
-              src={iconSearch}></img>
+              src={iconClear}></img>
           </button>
-        </div>
-        <input
-          className="input-search__input"
-          type="text"
-          name={name}
-          placeholder={placeholder}
-          onChange={handleChange} 
-          aria-label={ariaLabelInput}
-          value={value}/>
+        }
+        <button onClick={handleSubmit} aria-label={ariaLabelSubmit}>
+          <img
+            alt="icon-search"
+            className="input-search__actions__icon"
+            src={iconSearch}></img>
+        </button>
       </div>
-    );
-  };
+      <input
+        className="input-search__input"
+        type="text"
+        name={name}
+        placeholder={placeholder}
+        onChange={handleChange} 
+        aria-label={ariaLabelInput}
+        value={value}/>
+    </div>
+  );
+};
 
 export default Search;

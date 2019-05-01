@@ -1,6 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render (snapshot) 1`] = `
+exports[`Search should not show the clear button 1`] = `
+<div
+  className="input-search"
+>
+  <div
+    className="input-search__actions"
+  >
+    <button
+      aria-label="zoeken"
+      onClick={[Function]}
+    >
+      <img
+        alt="icon-search"
+        className="input-search__actions__icon"
+        src="search.svg"
+      />
+    </button>
+  </div>
+  <input
+    aria-label="zoeken"
+    className="input-search__input"
+    name="search"
+    onChange={[Function]}
+    placeholder="Zoeken"
+    type="text"
+  />
+</div>
+`;
+
+exports[`Search should render (snapshot) 1`] = `
 <div
   className="input-search"
 >
