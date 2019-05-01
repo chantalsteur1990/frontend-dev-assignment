@@ -39,7 +39,7 @@ export class SearchContainer extends Component {
       showButtonClear
     })
 
-    handleSuggestions(this.state.value);
+    handleSuggestions(e.target.value);
   };
 
   /**
