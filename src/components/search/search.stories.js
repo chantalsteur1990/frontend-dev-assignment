@@ -12,6 +12,7 @@ const props = {
   handleChange: action('input changed'),
   handleClear: action('input cleared'),
   handleSubmit: action('input submitted'),
+  handleKeyUp: action('key up'),
   value: 'trui'
 };
 

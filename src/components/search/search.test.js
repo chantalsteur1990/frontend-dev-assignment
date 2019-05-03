@@ -15,6 +15,7 @@ const mockProps = {
   handleChange: jest.fn(),
   handleClear: jest.fn(),
   handleSubmit: jest.fn(),
+  handleKeyUp: jest.fn(),
   value: ''
 };
 

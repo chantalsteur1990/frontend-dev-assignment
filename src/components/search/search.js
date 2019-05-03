@@ -10,6 +10,7 @@ const Search = (props) => {
     handleChange,
     handleClear,
     handleSubmit,
+    handleKeyUp,
     ariaLabelInput,
     ariaLabelClear,
     ariaLabelSubmit,
@@ -41,9 +42,11 @@ const Search = (props) => {
         type="text"
         name={name}
         placeholder={placeholder}
-        onChange={handleChange} 
+        onChange={handleChange}
+        onKeyUp={handleKeyUp}
         aria-label={ariaLabelInput}
-        value={value}/>
+        value={value}
+        autoComplete="off"/>
     </div>
   );
 };

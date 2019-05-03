@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "canned": "0.3.12",
-    "react": "16.3.2",
-    "react-dom": "16.3.2"
+    "react": "16.8.3",
+    "react-dom": "16.8.3"
   },
   "devDependencies": {
     "@storybook/react": "3.4.3",
@@ -13,7 +13,10 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.5",
-    "react-scripts": "1.1.4"
+    "react-redux": "^7.0.3",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"canned -p 5000 ./api/\"",

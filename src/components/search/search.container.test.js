@@ -13,7 +13,9 @@ const mockProps = {
   ariaLabelClear: 'annuleren',
   ariaLabelSubmit: 'zoeken',
   handleSearch: jest.fn(),
-  handleSuggestions: jest.fn()
+  handleSuggestions: jest.fn(),
+  handleQueryChange: jest.fn(),
+  value: ''
 };
 
 describe('Search container', () => {
@@ -21,43 +23,10 @@ describe('Search container', () => {
     const component = shallow(<SearchContainer {...mockProps} />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
-  
-  it ('should have mutated the state', () => {
+
+  it ('should call the submit callback', () => {
     const component = shallow(<SearchContainer {...mockProps} />);
-
-    expect(component.instance().state).toEqual({
-      value: ''
-    });
-
-    let mockEvent = { target: { value: 't' }};
-    component.instance().handleChange(mockEvent);
-    expect(component.instance().state).toEqual({
-      value: 't'
-    });
-
-    mockEvent.target.value = '';
-    component.instance().handleChange(mockEvent);
-    expect(component.instance().state).toEqual({
-      value: ''
-    });
-  });
-
-  it ('should clear the input', () => {
-    const component = shallow(<SearchContainer {...mockProps} />);
-    component.instance().state = {
-      value: 'trui'
-    };
-
-    component.instance().handleClear();
-    expect(component.instance().state).toEqual({
-      value: ''
-    });
-  });
-
-  it ('should call the submit callback with the current value', () => {
-    const component = shallow(<SearchContainer {...mockProps} />);
-    component.instance().state.value = 'trui';
     component.instance().handleSubmit();
-    expect(mockProps.handleSearch).toHaveBeenCalledWith('trui');
+    expect(mockProps.handleSearch).toHaveBeenCalled();
   })
 });

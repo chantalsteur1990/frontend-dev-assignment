@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Search from './search'
+import Search from './search';
 
 export class SearchContainer extends Component {
   constructor(props) {
@@ -8,9 +8,10 @@ export class SearchContainer extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleClear = this.handleClear.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
 
     this.state = {
-      value: ''
+      value: props.value
     }
   }
 
@@ -23,14 +24,8 @@ export class SearchContainer extends Component {
    * @return {Void}
    */
   handleChange = (e) => {
-    const { handleSuggestions } = this.props;
-
-    this.setState({
-      ...this.state,
-      value: e.target.value
-    })
-
-    handleSuggestions(e.target.value);
+    const { handleQueryChange } = this.props;
+    handleQueryChange(e.target.value);
   };
 
   /**
@@ -39,10 +34,8 @@ export class SearchContainer extends Component {
    * @return {Void}
    */
   handleClear = () => {
-    this.setState({
-      ...this.state,
-      value: ''
-    })
+    const { handleQueryChange } = this.props;
+    handleQueryChange('');
   };
 
   /**
@@ -53,7 +46,17 @@ export class SearchContainer extends Component {
    */
   handleSubmit = () => {
     const { handleSearch } = this.props;
-    handleSearch(this.state.value);
+    handleSearch();
+  }
+
+  /**
+   * Handle suggestions on key up
+   * 
+   * @return {Void}
+   */
+  handleKeyUp = () => {
+    const { handleSuggestions } = this.props;
+    handleSuggestions();
   }
 
   render() {
@@ -63,6 +66,7 @@ export class SearchContainer extends Component {
         handleChange={this.handleChange}
         handleClear={this.handleClear}
         handleSubmit={this.handleSubmit}
+        handleKeyUp={this.handleKeyUp}
         value={value}
         {...this.props}/>
     )

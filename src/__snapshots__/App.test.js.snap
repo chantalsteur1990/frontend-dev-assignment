@@ -4,14 +4,6 @@ exports[`App should render (snapshot) 1`] = `
 <div
   className="app"
 >
-  <SearchContainer
-    ariaLabelClear="annuleren"
-    ariaLabelInput="zoeken"
-    ariaLabelSubmit="zoeken"
-    handleSearch={[Function]}
-    handleSuggestions={[Function]}
-    name="search"
-    placeholder="Zoeken"
-  />
+  <ConnectFunction />
 </div>
 `;

@@ -10,7 +10,9 @@ const props = {
   ariaLabelClear: 'annuleren',
   ariaLabelSubmit: 'zoeken',
   handleSearch: action('do search'),
-  handleSuggestions: action('load suggestions')
+  handleSuggestions: action('load suggestions'),
+  handleQueryChange: action('handle query change'),
+  value: '',
 };
 
 storiesOf('SearchContainer', module)
