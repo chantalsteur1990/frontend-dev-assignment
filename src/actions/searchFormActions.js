@@ -4,8 +4,8 @@ import {
   SEARCH_RESPONSE,
   SEARCH_REQUEST } from './actionTypes';
 
-const API_URL_SUGGESTIONS = 'http://localhost:3000/search\?q\=trui';
-const API_URL_SEARCH = 'http://localhost:3000/search\?q\=trui';
+const API_URL_SUGGESTIONS = 'http://localhost:3000/search\?q\=';
+const API_URL_SEARCH = 'http://localhost:3000/search\?q\=';
 
 export const suggestionsResponse = (response) => {
   return {type: SUGGESTIONS_RESPONSE, payload: response};

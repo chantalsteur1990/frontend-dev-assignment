@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import SearchContainer from './search/search.container'
-// import Suggestions from './suggestions/suggestions';
+import Suggestions from './suggestions/suggestions';
 import * as searchFormActions from '../actions/searchFormActions';
 
 export class SearchForm extends Component {
@@ -75,13 +75,8 @@ export class SearchForm extends Component {
           handleSearch={this.handleSearch}
           handleQueryChange={this.handleQueryChange}
           value={query} />
-          
-          { showSuggestions && suggestions.map((suggestion) => {
-              return <p>{suggestion.searchterm}</p>
-            })
-          }
+          { showSuggestions && <Suggestions suggestions={suggestions} query={query} /> }
       </div>
-      // <Suggestions suggestions={suggestions} handleSelect={this.handleChange} />
     )
   }
 };
