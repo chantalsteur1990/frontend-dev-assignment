@@ -15,7 +15,7 @@ const mockProps = {
   handleChange: jest.fn(),
   handleClear: jest.fn(),
   handleSubmit: jest.fn(),
-  showButtonClear: true
+  value: ''
 };
 
 describe('Search', () => {
@@ -24,10 +24,10 @@ describe('Search', () => {
     expect(shallowToJson(component)).toMatchSnapshot();
   });
   
-  it('should not show the clear button', () => {
+  it('should show the clear button', () => {
     const props = {
       ...mockProps,
-      showButtonClear: false
+      value: 'trui'
     };
     const component = shallow(<Search {...props} />);
     expect(shallowToJson(component)).toMatchSnapshot();

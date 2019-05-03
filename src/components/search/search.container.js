@@ -10,14 +10,13 @@ export class SearchContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.state = {
-      value: '',
-      showButtonClear: false
+      value: ''
     }
   }
 
   /**
-   * Set clear button visible or not
-   * Call handleSuggestions callback
+   * Update value in state and
+   * call handleSuggestions callback
    * 
    * @param {Event} e
    * 
@@ -25,18 +24,10 @@ export class SearchContainer extends Component {
    */
   handleChange = (e) => {
     const { handleSuggestions } = this.props;
-    let showButtonClear;
-
-    if (e.target.value !== '') {
-      showButtonClear = true;
-    } else {
-      showButtonClear = false;
-    }
 
     this.setState({
       ...this.state,
-      value: e.target.value,
-      showButtonClear
+      value: e.target.value
     })
 
     handleSuggestions(e.target.value);
@@ -50,7 +41,6 @@ export class SearchContainer extends Component {
   handleClear = () => {
     this.setState({
       ...this.state,
-      showButtonClear: false,
       value: ''
     })
   };
@@ -67,13 +57,12 @@ export class SearchContainer extends Component {
   }
 
   render() {
-    const { showButtonClear, value } = this.state;
+    const { value } = this.state;
     return (
       <Search
         handleChange={this.handleChange}
         handleClear={this.handleClear}
         handleSubmit={this.handleSubmit}
-        showButtonClear={showButtonClear}
         value={value}
         {...this.props}/>
     )

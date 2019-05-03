@@ -12,7 +12,7 @@ const props = {
   handleChange: action('input changed'),
   handleClear: action('input cleared'),
   handleSubmit: action('input submitted'),
-  showButtonClear: true
+  value: 'trui'
 };
 
 storiesOf('Search', module)

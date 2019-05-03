@@ -12,7 +12,6 @@ exports[`Search container should render (snapshot) 1`] = `
   handleSuggestions={[Function]}
   name="search"
   placeholder="Zoeken"
-  showButtonClear={false}
   value=""
 />
 `;

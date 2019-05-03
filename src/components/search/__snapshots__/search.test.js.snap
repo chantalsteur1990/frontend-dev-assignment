@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search should not show the clear button 1`] = `
+exports[`Search should render (snapshot) 1`] = `
 <div
   className="input-search"
 >
@@ -25,11 +25,12 @@ exports[`Search should not show the clear button 1`] = `
     onChange={[Function]}
     placeholder="Zoeken"
     type="text"
+    value=""
   />
 </div>
 `;
 
-exports[`Search should render (snapshot) 1`] = `
+exports[`Search should show the clear button 1`] = `
 <div
   className="input-search"
 >
@@ -64,6 +65,7 @@ exports[`Search should render (snapshot) 1`] = `
     onChange={[Function]}
     placeholder="Zoeken"
     type="text"
+    value="trui"
   />
 </div>
 `;

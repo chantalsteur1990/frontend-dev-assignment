@@ -13,9 +13,10 @@ const Search = (props) => {
     ariaLabelInput,
     ariaLabelClear,
     ariaLabelSubmit,
-    showButtonClear,
     value,
   } = props;
+
+  const showButtonClear = value !== '';
 
   return (
     <div className="input-search">

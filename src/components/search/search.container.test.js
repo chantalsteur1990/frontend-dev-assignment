@@ -26,21 +26,18 @@ describe('Search container', () => {
     const component = shallow(<SearchContainer {...mockProps} />);
 
     expect(component.instance().state).toEqual({
-      showButtonClear: false,
       value: ''
     });
 
     let mockEvent = { target: { value: 't' }};
     component.instance().handleChange(mockEvent);
     expect(component.instance().state).toEqual({
-      showButtonClear: true,
       value: 't'
     });
 
     mockEvent.target.value = '';
     component.instance().handleChange(mockEvent);
     expect(component.instance().state).toEqual({
-      showButtonClear: false,
       value: ''
     });
   });
@@ -48,13 +45,11 @@ describe('Search container', () => {
   it ('should clear the input', () => {
     const component = shallow(<SearchContainer {...mockProps} />);
     component.instance().state = {
-      value: 'trui',
-      showButtonClear: true
+      value: 'trui'
     };
 
     component.instance().handleClear();
     expect(component.instance().state).toEqual({
-      showButtonClear: false,
       value: ''
     });
   });
