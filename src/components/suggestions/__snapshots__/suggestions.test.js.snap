@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Suggestions should render (snapshot) 1`] = `
+<div
+  className="suggestions"
+>
+  <div
+    className="suggestions__suggestion"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<span class=\\"bold\\">mooie </span>tr<span class=\\"bold\\">ui</span> (1203)",
+      }
+    }
+    id="mooie trui"
+    key="mooie trui"
+    onClick={[Function]}
+  />
+</div>
+`;

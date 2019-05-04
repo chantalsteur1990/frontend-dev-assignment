@@ -20,6 +20,7 @@ exports[`Search should render (snapshot) 1`] = `
   </div>
   <input
     aria-label="zoeken"
+    autoComplete="off"
     className="input-search__input"
     name="search"
     onChange={[Function]}
@@ -61,6 +62,7 @@ exports[`Search should show the clear button 1`] = `
   </div>
   <input
     aria-label="zoeken"
+    autoComplete="off"
     className="input-search__input"
     name="search"
     onChange={[Function]}

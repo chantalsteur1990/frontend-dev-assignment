@@ -15,7 +15,6 @@ export class SearchForm extends Component {
 
     this.state = {
       query: '',
-      suggestions: [],
       loading: false
     }
   }
@@ -42,7 +41,7 @@ export class SearchForm extends Component {
    */
   handleSearch = () => {
     const { actions: { searchRequest } } = this.props;
-    searchRequest(this.state.value);
+    searchRequest(this.state.query);
   }
 
   /**
@@ -87,7 +86,7 @@ export class SearchForm extends Component {
   }
 };
 
-const mapStateToProps = state =>({
+const mapStateToProps = state => ({
   suggestions: state.searchForm.suggestions,
   loading: state.searchForm.loading
 });

@@ -1,4 +1,7 @@
-import { SUGGESTIONS_REQUEST, SUGGESTIONS_RESPONSE } from '../actions/actionTypes';
+import {
+  SUGGESTIONS_REQUEST,
+  SUGGESTIONS_RESPONSE
+} from '../actions/actionTypes';
 
 const initialState = {
   suggestions: [],

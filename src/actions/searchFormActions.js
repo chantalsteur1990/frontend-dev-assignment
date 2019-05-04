@@ -5,7 +5,6 @@ import {
   SEARCH_REQUEST } from './actionTypes';
 
 const API_URL_SUGGESTIONS = 'http://localhost:3000/search\?q\=';
-const API_URL_SEARCH = 'http://localhost:3000/search\?q\=';
 
 export const suggestionsResponse = (response) => {
   return {type: SUGGESTIONS_RESPONSE, payload: response};
@@ -32,13 +31,8 @@ export const searchResponse = (response) => {
 export const searchRequest = (query) => {
   return dispatch => {
     dispatch({ type: SEARCH_REQUEST });
-    return fetch(API_URL_SEARCH + query, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-    .then(response => response.json())
-    .then(json => dispatch(searchResponse(json)));
+
+    console.log('Search for ' + query)
+    dispatch(searchResponse({}));
   };
 }
