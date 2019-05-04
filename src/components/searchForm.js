@@ -36,7 +36,7 @@ export class SearchForm extends Component {
 
   /**
    * Dispatch searchRequest action
-   * with
+   * with value from local state
    * 
    * @return {Void}
    */
@@ -75,7 +75,13 @@ export class SearchForm extends Component {
           handleSearch={this.handleSearch}
           handleQueryChange={this.handleQueryChange}
           value={query} />
-          { showSuggestions && <Suggestions suggestions={suggestions} query={query} /> }
+
+          { showSuggestions &&
+            <Suggestions
+              suggestions={suggestions}
+              query={query}
+              handleSelect={this.handleQueryChange} />
+          }
       </div>
     )
   }

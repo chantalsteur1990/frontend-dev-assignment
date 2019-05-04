@@ -1,0 +1,15 @@
+.suggestions {
+  color: grey;
+  width: 100%;
+}
+
+.suggestions__suggestion {
+  padding: 12px;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.suggestions__suggestion .bold {
+  color: black;
+}
