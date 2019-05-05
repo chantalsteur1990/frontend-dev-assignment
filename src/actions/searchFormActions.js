@@ -3,8 +3,7 @@ import {
   SUGGESTIONS_REQUEST,
   SEARCH_RESPONSE,
   SEARCH_REQUEST } from './actionTypes';
-
-const API_URL_SUGGESTIONS = 'http://localhost:3000/search\?q\=';
+import SuggestionsService from '../services/suggestions.service';
 
 export const suggestionsResponse = (response) => {
   return {type: SUGGESTIONS_RESPONSE, payload: response};
@@ -13,12 +12,7 @@ export const suggestionsResponse = (response) => {
 export const suggestionsRequest = (query) => {
   return dispatch => {
     dispatch({ type: SUGGESTIONS_REQUEST });
-    return fetch(API_URL_SUGGESTIONS + query, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
+    return SuggestionsService.getSuggestions(query)
     .then(response => response.json())
     .then(json => dispatch(suggestionsResponse(json)));
   };

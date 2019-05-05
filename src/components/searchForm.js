@@ -65,11 +65,6 @@ export class SearchForm extends Component {
     return (
       <div>
         <SearchContainer
-          name="search"
-          placeholder="Zoeken"
-          ariaLabelInput="zoeken"
-          ariaLabelClear="annuleren"
-          ariaLabelSubmit="zoeken"
           handleSuggestions={this.handleSuggestions}
           handleSearch={this.handleSearch}
           handleQueryChange={this.handleQueryChange}

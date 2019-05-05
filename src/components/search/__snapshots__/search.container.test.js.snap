@@ -5,10 +5,7 @@ exports[`Search container should render (snapshot) 1`] = `
   handleChange={[Function]}
   handleClear={[Function]}
   handleKeyUp={[Function]}
-  handleQueryChange={[Function]}
-  handleSearch={[Function]}
   handleSubmit={[Function]}
-  handleSuggestions={[Function]}
   value=""
 />
 `;

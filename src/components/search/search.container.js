@@ -67,8 +67,7 @@ export class SearchContainer extends Component {
         handleClear={this.handleClear}
         handleSubmit={this.handleSubmit}
         handleKeyUp={this.handleKeyUp}
-        value={value}
-        {...this.props}/>
+        value={value}/>
     )
   }
 };

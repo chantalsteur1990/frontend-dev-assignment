@@ -3,14 +3,9 @@
 exports[`SearchForm should render (snapshot) 1`] = `
 <div>
   <SearchContainer
-    ariaLabelClear="annuleren"
-    ariaLabelInput="zoeken"
-    ariaLabelSubmit="zoeken"
     handleQueryChange={[Function]}
     handleSearch={[Function]}
     handleSuggestions={[Function]}
-    name="search"
-    placeholder="Zoeken"
     value=""
   />
 </div>
@@ -19,14 +14,9 @@ exports[`SearchForm should render (snapshot) 1`] = `
 exports[`SearchForm should render with suggestions (snapshot) 1`] = `
 <div>
   <SearchContainer
-    ariaLabelClear="annuleren"
-    ariaLabelInput="zoeken"
-    ariaLabelSubmit="zoeken"
     handleQueryChange={[Function]}
     handleSearch={[Function]}
     handleSuggestions={[Function]}
-    name="search"
-    placeholder="Zoeken"
     value="tr"
   />
   <Suggestions
