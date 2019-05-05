@@ -9,10 +9,6 @@ export class SearchContainer extends Component {
     this.handleClear = this.handleClear.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
-
-    this.state = {
-      value: props.value
-    }
   }
 
   /**
@@ -60,7 +56,7 @@ export class SearchContainer extends Component {
   }
 
   render() {
-    const { value } = this.state;
+    const { value } = this.props;
     return (
       <Search
         handleChange={this.handleChange}
