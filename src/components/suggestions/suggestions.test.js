@@ -16,8 +16,18 @@ const mockProps = {
 };
 
 describe('Suggestions', () => {
+  let component;
+  
+  beforeEach(() => {
+    component = shallow(<Suggestions {...mockProps} />);
+  });
+
   it('should render (snapshot)', () => {
-    const component = shallow(<Suggestions {...mockProps} />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
+
+  it('should call handleSelect callback', () => {
+    component.find('.suggestions__suggestion').simulate('click', {target: { id: 'trui' } });
+    expect(mockProps.handleSelect).toHaveBeenCalledWith('trui');
+  })
 });

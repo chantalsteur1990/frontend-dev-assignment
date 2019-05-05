@@ -14,14 +14,38 @@ const mockProps = {
 };
 
 describe('Search container', () => {
+  let component;
+
+  beforeEach(() => {
+    component = shallow(<SearchContainer {...mockProps} />);
+  });
+
   it('should render (snapshot)', () => {
-    const component = shallow(<SearchContainer {...mockProps} />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
+  it('should call the handleQueryChange callback on handleChange', () => {
+    const mockEvent = {
+      target: {
+        value: 't'
+      }
+    }
+    component.instance().handleChange(mockEvent);
+    expect(mockProps.handleQueryChange).toHaveBeenCalledWith('t');
+  });
+
+  it('should call the handleQueryChange callback on handleClear', () => {
+    component.instance().handleClear();
+    expect(mockProps.handleQueryChange).toHaveBeenCalledWith('');
+  });
+
   it ('should call the submit callback', () => {
-    const component = shallow(<SearchContainer {...mockProps} />);
     component.instance().handleSubmit();
     expect(mockProps.handleSearch).toHaveBeenCalled();
+  });
+
+  it('should call handleSuggestions callback on keyup event', () => {
+    component.instance().handleKeyUp();
+    expect(mockProps.handleSuggestions).toHaveBeenCalled();
   });
 });
