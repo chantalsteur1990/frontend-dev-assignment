@@ -25,7 +25,7 @@ describe('Services: Suggestions', () => {
           "method": "GET"
         }
       );
-      expect(response.json()).toEqual({
+      expect(response).toEqual({
         suggestions: []
       });
   });

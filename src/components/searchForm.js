@@ -35,7 +35,7 @@ export class SearchForm extends Component {
 
   /**
    * Dispatch searchRequest action
-   * with value from local state
+   * with query from local state
    * 
    * @return {Void}
    */

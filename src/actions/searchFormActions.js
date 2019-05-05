@@ -10,11 +10,11 @@ export const suggestionsResponse = (response) => {
 }
 
 export const suggestionsRequest = (query) => {
-  return dispatch => {
+  return async dispatch => {
     dispatch({ type: SUGGESTIONS_REQUEST });
-    return SuggestionsService.getSuggestions(query)
-    .then(response => response.json())
-    .then(json => dispatch(suggestionsResponse(json)));
+    const response =
+      await SuggestionsService.getSuggestions(query);
+    dispatch(suggestionsResponse(response))
   };
 }
 
