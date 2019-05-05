@@ -5,15 +5,10 @@ import iconClear from '../../assets/img/clear.svg';
 
 const Search = (props) => {
   const {
-    name,
-    placeholder,
     handleChange,
     handleClear,
     handleSubmit,
     handleKeyUp,
-    ariaLabelInput,
-    ariaLabelClear,
-    ariaLabelSubmit,
     value,
   } = props;
 
@@ -23,14 +18,14 @@ const Search = (props) => {
     <div className="input-search">
       <div className="input-search__actions">
         { showButtonClear &&
-          <button onClick={handleClear} aria-label={ariaLabelClear}>
+          <button onClick={handleClear} aria-label="annuleren">
             <img
               alt="icon-clear"
               className="input-search__actions__icon"
               src={iconClear}></img>
           </button>
         }
-        <button onClick={handleSubmit} aria-label={ariaLabelSubmit}>
+        <button onClick={handleSubmit} aria-label="zoeken">
           <img
             alt="icon-search"
             className="input-search__actions__icon"
@@ -40,11 +35,11 @@ const Search = (props) => {
       <input
         className="input-search__input"
         type="text"
-        name={name}
-        placeholder={placeholder}
+        name="search"
+        placeholder="Zoeken"
         onChange={handleChange}
         onKeyUp={handleKeyUp}
-        aria-label={ariaLabelInput}
+        aria-label="zoeken"
         value={value}
         autoComplete="off"/>
     </div>

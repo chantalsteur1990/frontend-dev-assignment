@@ -2,9 +2,6 @@
 
 exports[`Search container should render (snapshot) 1`] = `
 <Search
-  ariaLabelClear="annuleren"
-  ariaLabelInput="zoeken"
-  ariaLabelSubmit="zoeken"
   handleChange={[Function]}
   handleClear={[Function]}
   handleKeyUp={[Function]}
@@ -12,8 +9,6 @@ exports[`Search container should render (snapshot) 1`] = `
   handleSearch={[Function]}
   handleSubmit={[Function]}
   handleSuggestions={[Function]}
-  name="search"
-  placeholder="Zoeken"
   value=""
 />
 `;

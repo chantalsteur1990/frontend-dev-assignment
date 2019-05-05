@@ -7,11 +7,6 @@ import SearchContainer from './search.container';
 configure({ adapter: new Adapter() });
 
 const mockProps = {
-  name: 'search',
-  placeholder: 'Zoeken',
-  ariaLabelInput: 'zoeken',
-  ariaLabelClear: 'annuleren',
-  ariaLabelSubmit: 'zoeken',
   handleSearch: jest.fn(),
   handleSuggestions: jest.fn(),
   handleQueryChange: jest.fn(),
@@ -28,5 +23,5 @@ describe('Search container', () => {
     const component = shallow(<SearchContainer {...mockProps} />);
     component.instance().handleSubmit();
     expect(mockProps.handleSearch).toHaveBeenCalled();
-  })
+  });
 });

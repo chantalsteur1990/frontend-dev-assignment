@@ -7,11 +7,6 @@ import Search from './search';
 configure({ adapter: new Adapter() });
 
 const mockProps = {
-  name: 'search',
-  placeholder: 'Zoeken',
-  ariaLabelInput: 'zoeken',
-  ariaLabelClear: 'annuleren',
-  ariaLabelSubmit: 'zoeken',
   handleChange: jest.fn(),
   handleClear: jest.fn(),
   handleSubmit: jest.fn(),
